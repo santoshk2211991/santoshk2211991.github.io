@@ -1,1 +1,41 @@
-hello new page
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+i=1;
+function myFunction1() {
+	for(i=0;i<10000;i++){
+		
+		for (d=0;d<150;d++){
+			c = i+1;
+		}
+    console.log('function1------'+i);}
+}
+function myFunction2() {
+	k=1;
+	while(k<110){
+    console.log('function2------'+i);
+    k++;
+	}
+}
+
+
+function myFunction() {
+    myFunction1();
+    myFunction2();
+}
+myFunction1();
+    myFunction2();
+</script>
+</head>
+
+<body>
+
+<h1>My Web Page</h1>
+
+<p id="demo">A Paragraph</p>
+
+<button type="button" onclick="myFunction()">Try it</button>
+
+</body>
+</html>

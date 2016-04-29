@@ -1,0 +1,102 @@
+<div ng-app="" ng-controller="AmortizationCtrl"> 
+<h1>Amortization Calculator</h1>
+<form class="form-inline">
+ <div class="form-group">
+<table class = 'table'>
+<tr>
+<td><label>Interest:</label></td>
+<td><input type="text" ng-model="interest" class="form-control"></td>
+</tr>
+<tr>
+<td><label>Loan Amount:</label></td>
+
+<td><input type="text" ng-model="loan" class="form-control"></td>
+</tr>
+<tr>
+<td><label>Months:</label></td>
+
+<td><input type="text" ng-model="months" class="form-control"></td>
+</tr>
+</table>
+
+<button id="compBut" type="submit" ng-click='compute1()' class = "btn btn-primary">Compute</button>
+
+</div>
+
+<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Excess principal payment options
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a ng-model='yearly' ng-click = 'custom(1)'>Yearly</a></li> 
+       <li><a ng-model='half' ng-click = 'custom(2)'>Half</a></li>
+
+    <li><a  ng-model='quaterly' ng-click = 'custom(3)'>Quaterly</a></li>
+    <li><a  ng-model='quaterly' ng-click = 'custom(4)'>Custom</a></li>
+        <li><a  ng-model='quaterly' ng-click = 'custom(5)'>None</a></li>
+
+  </ul>
+
+
+
+</div>
+<div>
+<!-- <div ng-show ='yearly'>
+<label>yearly extra</label><input type="text" ng-model="val1" class="form-control"><br/>
+
+</div>
+<div ng-show ='half'>
+<label>half yearly extra</label><input type="text" ng-model="val2" class="form-control"><br/>
+<input type="text" ng-model="val2" class="form-control"><br/>
+</div>
+<div ng-show ='quaterly'>
+<label>quaterly extra</label><input type="text" ng-model="val3" class="form-control"><br/>
+<input type="text" ng-model="val3" class="form-control"><br/>
+<input type="text" ng-model="val3" class="form-control"><br/>
+<input type="text" ng-model="val3" class="form-control"><br/>
+</div> -->
+
+
+<div ng-show ='customInp' class = 'sample-show-hide' style = 'clear:both;'>
+<label>custom extra</label><br/>
+<label>No of custom entries</label>
+<input type="text" ng-model="val4" class="form-control" ng-change = 'range()'><br/>
+<!--  <button ng-click='compute2()' class = "btn btn-primary">Compute</button>
+ --> 
+ <label>please provide inputs</label>
+ <table><tr ng-repeat="a in formCount track by $index">
+  <td >
+ <input type="text"  class="form-control" ng-model='formMnth[$index]'></td>
+ <td>
+ <input type="text" class="form-control" ng-model='formPrincipal[$index]'></td></tr></table>
+</div>
+
+
+</div>
+
+
+</form>
+
+
+<div >
+  <div ng-model="checked" ng-show ="checked" ng-animate="'animate'"> 
+    <h1>Monthly Installment: {{val}}</h1><br/>
+    <h1>Total Amount payable: {{totAmt}}</h1><br/>
+    <h1>Total Interest payable: {{totInt}}</h1><br/>
+<!-- <h1>{{list.interest}}</h1><h2>{{list.principal}}</h2> -->
+<div class="table-responsive">
+    <table class = "table table-bordered table-hover" >
+    <tr class = "danger">
+    <th >Interest</th>
+    <th >Principal</th> 
+    <th >Amount Outstanding</th>
+  </tr>	
+  <tr ng-repeat="x in list " ng-animate="'animate'}">
+  	<td >{{x.interest}}</td>
+  	<td >{{x.principal}}</td>
+  	<td >{{x.balance }}</td>
+  </tr>
+</table>
+</div>
+</div>
+</div>
+</div>

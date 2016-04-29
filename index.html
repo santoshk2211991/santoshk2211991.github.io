@@ -1,60 +1,150 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link rel="stylesheet" href="app.css"> -->
-  <link rel="stylesheet" href="styles/960.css">
-  <link rel="stylesheet" href="styles/960_24_col.css">
-  <link rel="stylesheet" href="styles/bootstrap.css">
-  <link rel="stylesheet" href="styles/bootstrap-theme.css">
-      <link rel="stylesheet" href="test.css">
-
-    <script src="jquery.min.js"></script>
-  <script src="bootstrap.min.js "></script>
-
-
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supplsssy a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .centered{
+/*                background: yellow;*/
+                position: fixed;
+                top: 50%;
+                left:  50%;
+                width :200px;
+                height: 200px;
+                margin-top: -100px;
+                margin-left: -100px;
+                animation: example3 60s infinite linear;
+            }
+            .centeredBorder{
+                position: fixed;
+                top: 50%;
+                left:  50%;
+                width :110px;
+                height: 110px;
+                margin-top: -55px;
+                margin-left: -55px;
+                border-radius: 50%;
+/*                border-top: 3px solid #8c8b8b;
+	border-bottom: 3px solid #fff;*/
+/*        border: 0;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;*/
+border-top: 3px dotted #0404B4;
+	border-bottom: 3px dotted #DF013A;
+        animation: example1 3s infinite linear;
+            }
+            .centered1{
+                background: red;
+                position: fixed;
+                top: 50%;
+                left:  50%;
+                width :100px;
+                height: 100px;
+                margin-top: -50px;
+                margin-left: -50px;
+                animation-name: example;
+                animation-duration:3s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+                border-radius: 50%;
+                
+                
+            }
+           @-webkit-keyframes example {
+    0%   {background-color: red;
+    -webkit-transform: rotate(0deg); }
+    49%  {background-color: yellow;
+    -webkit-transform:rotate(180deg);}
   
+    71% {background-color: cyan;
+      -webkit-transform:rotate(270deg);}
+    100% {background-color: green;
+     -webkit-transform: rotate(359deg);}
+}
+
+@-webkit-keyframes example1 {
+    0%   {
+    -webkit-transform: rotate(0deg); }
+    49%  {
+    -webkit-transform:rotate(180deg);}
   
-   
-</head>
-<body>
-  <!-- <div class="page-header">
-  <h1>Example page header <small>Subtext for header</small></h1>
-</div> -->
-<!-- <header class="page-header" id="top" role="banner"><h1>Amortization Calculator</h1></header>
-  <ul class="nav nav-pills">
-    <li ><a href="#/view1">view1</a></li>
-    <li><a href="#/amortization" class="active">Amortization Calculator</a></li>
-    <li><a href="#/javascriptView" class="active">javascriptView</a></li>
-  </ul>
- -->
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+    71% {
+      -webkit-transform:rotate(270deg);}
+    100% {
+     -webkit-transform: rotate(359deg);}
+}
+@-webkit-keyframes example2 {
+    0%   {
+    -webkit-transform: translate(-100px,-100px) }
+    25%  {
+    -webkit-transform:translate(100px,-100px) }
+  
+    50% {
+      -webkit-transform:translate(100px,100px)}
+    75% {
+     -webkit-transform: translate(-100px,100px)}
+    100%   {
+    -webkit-transform: translate(-100px,-100px) }
+}
+@-webkit-keyframes example3 {
+    0%   {
+    -webkit-transform: skew(0deg,0deg) }
+    25%  {
+    -webkit-transform:skew(90deg, 90deg) }
+  
+    50% {
+      -webkit-transform:skew(1800deg,180deg)}
+    75% {
+     -webkit-transform: skew(270deg,270deg)}
+    100%   {
+    -webkit-transform: skew(359deg,359deg) }
+}
+@-webkit-keyframes example4 {
+    0%   {
+    -webkit-transform: skew(0deg,0deg) }
+    25%  {
+    -webkit-transform:skew(90deg, 0deg) }
+  
+    50% {
+      -webkit-transform:skew(1800deg,0deg)}
+    75% {
+     -webkit-transform: skew(270deg,0deg)}
+    100%   {
+    -webkit-transform: skew(359deg,0deg) }
+}
+@-webkit-keyframes example5 {
+    0%   {
+    -webkit-transform: rotateY(0deg);
+    }
+    49%  {
+    -webkit-transform:rotateY(180deg);}
+  
+    71% {
+      -webkit-transform:rotateY(270deg);}
+    100% {
+     -webkit-transform: rotateY(359deg);}
+}
+        </style>
+        <script type="text/javascript">
+        function exmp(){
+            alert(window.innerHeight);
+        }
+        
+        </script>
+    </head>
+    <body>
+        <div class="centered">
+                    <div class="centeredBorder">
 
-  <div ng-view class="grid_24 container-fluid"></div>
-<!--   <footer class="page-footer" role="contentinfo">End of Page</footer>
- -->
-
-<!--   <div>Angular seed app: v<span app-version></span></div>
- -->
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="angular/angular.js"></script>
-  <script src="angular/angular-route.js"></script>
-      <script src="angular/angular-animate.js"></script>
-
-  <script src="app.js"></script>
-  <script src="amortization/amortization.js"></script>
-  <script src="test1/test1.js"></script>
-  <script src="trial/trial.js"></script>
-</body>
+            <div class="centered1" onclick="exmp()">
+                <pre>  &#x25CB;</pre>
+                
+            </div></div></div>
+    </body>
+    
 </html>

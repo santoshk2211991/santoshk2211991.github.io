@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="app.css"> -->
+  <link rel="stylesheet" href="styles/960.css">
+  <link rel="stylesheet" href="styles/960_24_col.css">
+  <link rel="stylesheet" href="styles/bootstrap.css">
+  <link rel="stylesheet" href="styles/bootstrap-theme.css">
+      <link rel="stylesheet" href="test.css">
+
+    <script src="jquery.min.js"></script>
+  <script src="bootstrap.min.js "></script>
+
+
+  
+  
+   
+</head>
+<body>
+  <!-- <div class="page-header">
+  <h1>Example page header <small>Subtext for header</small></h1>
+</div> -->
+<!-- <header class="page-header" id="top" role="banner"><h1>Amortization Calculator</h1></header>
+  <ul class="nav nav-pills">
+    <li ><a href="#/view1">view1</a></li>
+    <li><a href="#/amortization" class="active">Amortization Calculator</a></li>
+    <li><a href="#/javascriptView" class="active">javascriptView</a></li>
+  </ul>
+ -->
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div ng-view class="grid_24 container-fluid"></div>
+<!--   <footer class="page-footer" role="contentinfo">End of Page</footer>
+ -->
+
+<!--   <div>Angular seed app: v<span app-version></span></div>
+ -->
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="angular/angular.js"></script>
+  <script src="angular/angular-route.js"></script>
+      <script src="angular/angular-animate.js"></script>
+
+  <script src="app.js"></script>
+  <script src="amortization/amortization.js"></script>
+  <script src="test1/test1.js"></script>
+  <script src="trial/trial.js"></script>
+</body>
+</html>

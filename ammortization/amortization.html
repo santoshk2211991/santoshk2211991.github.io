@@ -20,7 +20,8 @@
           <tr>
               <!-- <input type = "date" ng-model = "date" class = "form-control" required/> -->
             <td><label>Date:</label></td>
-            <td><input type = "date" ng-model = "date" class = "form-control" required/></td>
+            <!-- <td><input type = "date" ng-model = "date" class = "form-control" required/></td> -->
+            <td><input type = "month" ng-model = "date" class = "form-control" required/></td>
           </tr> 
         </table>
 
@@ -48,7 +49,8 @@
               <tr ng-repeat="a in formCount track by $index">
                 <td >
                   <!-- <input type="text"  class="form-control" ng-model='formMnth[$index]'> -->
-                  <input type = "date" ng-model = "formMnth[$index]" class = "form-control" required/>
+                  <!-- <input type = "date" ng-model = "formMnth[$index]" class = "form-control" required/> -->
+                  <input type = "month" ng-model = "formMnth[$index]" class = "form-control" required/>
                 </td>
                 <td>
                   <input type="text" class="form-control" ng-model='formPrincipal[$index]'>

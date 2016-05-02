@@ -29,6 +29,21 @@ angular.module('myApp.amortization', ['ngRoute'])
 
       $scope.date = '';
 
+      function monthDifference(date1, date2) {
+        console.log('entering function' + '------' + date2 + '------' + date1)
+        var months;
+        var d1y = date1.getFullYear();
+        var d2y = date2.getFullYear();
+
+        months = (d2y - d1y) * 12;
+
+        months = Math.abs(months) + Math.abs(date2.getMonth() - date1.getMonth());
+        // months = months + date2.getMonth();
+
+        console.log(months);
+        return months;
+
+      }
       $scope.custom = function (x) {
         $scope.cusDur = x;
         $scope.customInp = true;
@@ -96,12 +111,15 @@ angular.module('myApp.amortization', ['ngRoute'])
         var n = $scope.months;
         var exp = Math.pow((1 + i), n);
 
+        var dateEmpty = true;
+
         console.log($scope.date);
         if ($scope.date == '' || $scope.date == undefined) {
           var x = new Date();
           x.setMonth(x.getMonth() + 1);
         } else {
           var x = new Date($scope.date);
+          dateEmpty = false;
 
         }
 
@@ -123,7 +141,12 @@ angular.module('myApp.amortization', ['ngRoute'])
           tempPrincipal = parseFloat(amount) - parseFloat(tempInt);
 
           for (var k = 0; k < $scope.val4; k++) {
-            if (parseInt($scope.formMnth[k]) == (j + 1)) {
+            var formFieldDate = new Date($scope.formMnth[k]);
+
+            console.log('formMnth- ' + monthDifference(x, formFieldDate));
+            // console.log('j+1- '+(j+1));
+            // if (parseInt($scope.formMnth[k]) == (j + 1)) {
+            if (parseInt(monthDifference(x, formFieldDate)) == 0) {
               console.log('found month ' + (j + 1) + 'amount' + $scope.formPrincipal[k])
               tempPrincipal = parseFloat(tempPrincipal) + parseFloat($scope.formPrincipal[k]);
               break;

@@ -29,11 +29,11 @@
           <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Excess principal payment options
           <span class="caret"></span></button>
           <ul class="dropdown-menu">
-            <li><a ng-model='yearly' ng-click = 'custom(1)'>Yearly</a></li> 
+           <!--  <li><a ng-model='yearly' ng-click = 'custom(1)'>Yearly</a></li> 
             <li><a ng-model='half' ng-click = 'custom(2)'>Half</a></li>
-            <li><a  ng-model='quaterly' ng-click = 'custom(3)'>Quaterly</a></li>
+            <li><a  ng-model='quaterly' ng-click = 'custom(3)'>Quaterly</a></li> -->
             <li><a  ng-model='quaterly' ng-click = 'custom(4)'>Custom</a></li>
-            <li><a  ng-model='quaterly' ng-click = 'custom(5)'>None</a></li>
+            <!-- <li><a  ng-model='quaterly' ng-click = 'custom(5)'>None</a></li> -->
           </ul>
         </div>
 
@@ -53,7 +53,7 @@
                   <input type = "month" ng-model = "formMnth[$index]" class = "form-control" required/>
                 </td>
                 <td>
-                  <input type="text" class="form-control" ng-model='formPrincipal[$index]'>
+                  <input type="text" class="form-control" ng-model='formPrincipal[$index]' value="0">
                 </td>
               </tr>
             </table>

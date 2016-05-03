@@ -147,6 +147,10 @@ angular.module('myApp.amortization', ['ngRoute'])
             // console.log('j+1- '+(j+1));
             // if (parseInt($scope.formMnth[k]) == (j + 1)) {
             if (parseInt(monthDifference(x, formFieldDate)) == 0) {
+              console.log($scope.formPrincipal[k]);
+              if($scope.formPrincipal[k] == ''|| $scope.formPrincipal[k]==undefined){
+                $scope.formPrincipal[k]=0;
+              }
               console.log('found month ' + (j + 1) + 'amount' + $scope.formPrincipal[k])
               tempPrincipal = parseFloat(tempPrincipal) + parseFloat($scope.formPrincipal[k]);
               break;

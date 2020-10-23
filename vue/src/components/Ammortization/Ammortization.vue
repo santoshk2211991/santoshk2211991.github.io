@@ -1,7 +1,19 @@
 <template>
+<div class="row">
+      <button
+        id="compBut"
+        type="submit"
+        v-on:click="computeAmmortization"
+        class="btn btn-primary"
+      >
+        Compute
+      </button>
+    </div>
   <div>
+    
     <div class="row">
       <div class="col-md-12 row">
+        
         <div class="col-md-6">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -64,16 +76,7 @@
       </div>
     </div>
 
-    <div>
-      <button
-        id="compBut"
-        type="submit"
-        v-on:click="computeAmmortization"
-        class="btn btn-primary"
-      >
-        Compute
-      </button>
-    </div>
+    
 
     <!-- <div class = "col-md-6" style ="background:red"> -->
     <div class="col-md-6">
@@ -91,7 +94,7 @@
               <!--  <li><a ng-model='yearly' ng-click = 'custom(1)'>Yearly</a></li> 
             <li><a ng-model='half' ng-click = 'custom(2)'>Half</a></li>
             <li><a  ng-model='quaterly' ng-click = 'custom(3)'>Quaterly</a></li> -->
-              <li><a ng-model="quaterly" ng-click="custom(4)">Custom</a></li>
+              <li><a ng-model="quaterly" v-on:click="custom(4)">Custom</a></li>
               <!-- <li><a  ng-model='quaterly' ng-click = 'custom(5)'>None</a></li> -->
             </ul>
           </div>
@@ -106,21 +109,21 @@
               <label>No of custom entries</label>
               <input
                 type="text"
-                ng-model="val4"
+                v-model="customMonthCount"
                 class="form-control"
-                ng-change="range()"
+                v-on:change="range()"
               /><br />
               <!--  <button ng-click='compute2()' class = "btn btn-primary">Compute</button>
              -->
               <label>please provide inputs</label>
               <table>
-                <tr ng-repeat="a in formCount track by $index">
+                <tr v-for="(a, index) in formCount" :key="index">
                   <td>
                     <!-- <input type="text"  class="form-control" ng-model='formMnth[$index]'> -->
                     <!-- <input type = "date" ng-model = "formMnth[$index]" class = "form-control" required/> -->
                     <input
                       type="month"
-                      ng-model="formMnth[$index]"
+                      v-model="formMnth[$index]"
                       class="form-control"
                       required
                     />
@@ -129,23 +132,22 @@
                     <input
                       type="text"
                       class="form-control"
-                      ng-model="formPrincipal[$index]"
-                      value="0"
+                      v-model="formPrincipal[$index]"
                     />
                   </td>
                 </tr>
               </table>
             </div>
           </div>
-
+<!-- 
           <button
             id="compBut"
             type="submit"
-            ng-click="compute1()"
+            v-click="compute1()"
             class="btn btn-primary"
           >
             Compute
-          </button>
+          </button> -->
         </div>
       </form>
     </div>
@@ -174,7 +176,7 @@
           <th >Principal</th> 
           <th >Amount Outstanding</th>
         </tr> 
-        <template v-for="x in list" :key="x.tempDate" bind-id="$index"
+        <!-- <template v-for="x in list" :key="x.tempDate" bind-id="$index"
   bind-data="item">
         <tr  >
           <td>{{x.tempDate}}</td>
@@ -183,14 +185,14 @@
           <td >{{x.balance }}</td>
         </tr>
 
-        </template>
-<!-- 
+        </template> -->
+
         <tr v-for="x in list" :key="x.tempDate">
           <td>{{x.tempDate}}</td>
           <td >{{x.interest}}</td>
           <td >{{x.principal}}</td>
           <td >{{x.balance }}</td>
-        </tr> -->
+        </tr>
       </table>
     </div>
   </div>

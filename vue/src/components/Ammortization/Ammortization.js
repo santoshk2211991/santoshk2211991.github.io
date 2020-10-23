@@ -5,7 +5,7 @@ export default {
   data() {
     return {
       enable: true,
-      interest: 10,
+      interest: 0,
       loanAmount: 0,
       val: 0,
       totInt: 0,
@@ -13,7 +13,8 @@ export default {
       list: [],
       formCount : '',
       formMnth : '',
-      formPrincipal : ''
+      formPrincipal : '',
+      checked: false
     };
   },
   methods: {
@@ -35,6 +36,7 @@ export default {
     },
     computeEmiBreakdown: function (i, P, amount) {
         console.log('initial',this.list)
+      this.checked = true;
       this.list = [];
 
       let tempBal = P;
@@ -55,13 +57,13 @@ export default {
         tempInt = parseFloat(tempBal) * parseFloat(i);
         tempPrincipal = parseFloat(amount) - parseFloat(tempInt);
 
-        for (var k = 0; k < this.val4; k++) {
+        for (var k = 0; k < this.customMonthCount; k++) {
           var formFieldDate = new Date(this.formMnth[k]);
 
-          console.log("formMnth- " + monthDifference(x, formFieldDate));
+          console.log("formMnth- " + this.monthDifference(x, formFieldDate));
           // console.log('j+1- '+(j+1));
           // if (parseInt(this.formMnth[k]) == (j + 1)) {
-          if (parseInt(monthDifference(x, formFieldDate)) == 0) {
+          if (parseInt(this.monthDifference(x, formFieldDate)) == 0) {
             console.log(this.formPrincipal[k]);
             if (
               this.formPrincipal[k] == "" ||
@@ -138,7 +140,7 @@ export default {
           this.half  = false;
           this.quaterly = false;
           this.customInp = false;*/
-          this.val4 = 1;
+          this.customMonthCount = 1;
           this.range();
           this.formMnth[0] = 12;
         } else if (x == 2) {
@@ -146,7 +148,7 @@ export default {
           this.half  = true;
           this.quaterly = false;
           this.customInp = false;*/
-          this.val4 = 2;
+          this.customMonthCount = 2;
           this.range();
           this.formMnth[0] = 6;
           this.formMnth[1] = 12;
@@ -156,7 +158,7 @@ export default {
           this.half  = false;
           this.quaterly = true;
           this.customInp = false;*/
-          this.val4 = 4;
+          this.customMonthCount = 4;
           this.range();
           this.formMnth[0] = 3;
           this.formMnth[1] = 6;
@@ -167,7 +169,7 @@ export default {
           this.half  = false;
           this.quaterly = false;
           this.customInp = true;*/
-          this.val4 = 0;
+          this.customMonthCount = 0;
           this.range();
         } else {
           /*this.yearly = false;
@@ -179,7 +181,7 @@ export default {
 
       },
       range : function () {
-        var n = this.val4;
+        var n = this.customMonthCount;
         console.log(typeof(n));
         this.formCount = new Array(parseInt(n));
         this.formMnth = new Array(parseInt(n));

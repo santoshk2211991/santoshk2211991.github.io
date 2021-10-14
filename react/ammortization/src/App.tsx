@@ -2,6 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Spinner from './components/Spinner/Spinner'
+
+import Ammortization from './pages/Ammortization/Ammortization'
 function App() {
   return (
     <div className="App">
@@ -19,6 +22,12 @@ function App() {
           Learn React
         </a>
       </header> */}
+
+   
+     
+
+      {/* <Spinner></Spinner> */}
+      <Ammortization></Ammortization>
     </div>
   );
 }

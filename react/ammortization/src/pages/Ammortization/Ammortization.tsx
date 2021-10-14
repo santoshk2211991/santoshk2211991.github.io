@@ -21,11 +21,15 @@ export default class Ammortization extends Component{
         super(props);
         this.state = {interest: 0, loanAmount:0,
             months:0,
-            date:null};
+            date:null,value:0,
+            list: [],
+            checked:true, 
+            totInt: 0};
     
         // This binding is necessary to make `this` work in the callback
         this.computeAmmortization = this.computeAmmortization.bind(this);
         this.updateState = this.updateState.bind(this);
+        this.computeEmiBreakdown = this.computeEmiBreakdown.bind(this);
       }
     
       computeAmmortization() {
@@ -58,7 +62,7 @@ export default class Ammortization extends Component{
       }
    
       computeEmiBreakdown (i:any, P:any, amount:any) {
-        console.log('initial',this.state.list)
+        console.log('initial',this.state)
       this.state.checked = true;
       let list = [];
 
@@ -107,7 +111,12 @@ export default class Ammortization extends Component{
 
         tempBal = parseFloat(tempBal) - parseFloat(tempPrincipal as unknown as string);
 
-        this.state.totInt = parseFloat(this.state.totInt) + parseFloat(tempInt as unknown as string);
+        console.log('santosh..',tempInt, this.state.totInt)
+        const totInt = parseFloat(this.state.totInt) + parseFloat(tempInt as unknown as string);
+        console.log('santosh..',totInt)
+
+        this.setState({...this.state,totInt:totInt})
+
         if (tempBal < 0) {
           console.log("balance less than 0");
 
@@ -249,6 +258,23 @@ export default class Ammortization extends Component{
         </div>
       </div>
     </div>  
+
+<div className="row">
+
+    <div
+      className="col-md-6"
+      ng-model="checked"
+      ng-show="checked"
+      ng-animate="'animate'"
+    >
+      <h1>Monthly Installment: {this.state.value}</h1>
+      <br />
+      <h1>Total Amount payable: {this.state.totAmt}</h1>
+      <br />
+      <h1>Total Interest payable: {this.state.totInt}</h1>
+      <br />
+    </div>
+</div>
             </>
 
         )

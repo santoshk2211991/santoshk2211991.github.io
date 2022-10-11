@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:14-alpine
 ENV NODE_VERSION 14.16.1
 
 WORKDIR /app

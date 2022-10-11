@@ -275,6 +275,39 @@ export default class Ammortization extends Component{
       <br />
     </div>
 </div>
+<div className='row'>
+  <div className='row-block'>
+  <span className='row-block-text'>
+           Date
+          </span>|
+          <span className='row-block-text'>
+           Interest
+          </span>|
+          <span className='row-block-text'>
+            Principal
+          </span>|
+          <span className='row-block-text'>
+            Balance
+          </span>
+  </div>
+
+  {this.state.list.map((item:any)=>{
+    return (<div className='row-block'>
+          <span className='row-block-text'>
+            {item.tempDate}
+          </span >|
+          <span className='row-block-text'>
+            {item.interest}
+          </span>|
+          <span className='row-block-text'>
+            {item.principal}
+          </span>|
+          <span className='row-block-text'>
+            {item.balance}
+          </span>
+    </div>)
+  })}
+</div>
             </>
 
         )

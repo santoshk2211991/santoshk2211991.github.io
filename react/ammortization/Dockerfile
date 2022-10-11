@@ -1,0 +1,2 @@
+FROM node:alpine
+ENV NODE_VERSION 14.16.1
